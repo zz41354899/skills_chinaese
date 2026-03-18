@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { ChevronDown, ChevronRight, X } from 'lucide-vue-next'
 
-const props = defineProps<{
+defineProps<{
   isOpen?: boolean
 }>()
 
