@@ -38,13 +38,14 @@ onUnmounted(() => {
 
 <template>
   <nav class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div class="flex h-16 items-center px-4 md:px-8 gap-4 max-w-[1400px] mx-auto">
+    <div class="flex h-16 items-center px-4 md:px-8 justify-between max-w-[1400px] mx-auto">
+      <!-- 左側: Logo -->
       <router-link to="/home" class="flex items-center flex-shrink-0">
-        <span class="inline-block text-2xl sm:text-3xl font-bold tracking-tight">Agent Skills</span>
+        <span class="text-xl md:text-2xl font-bold tracking-tight">Agent Skills</span>
       </router-link>
       
-      <!-- 搜尋框 - 中間位置 -->
-      <div class="flex-1 max-w-2xl mx-auto hidden md:block">
+      <!-- 中間: 搜尋框 (桌面版) -->
+      <div class="flex-1 max-w-2xl mx-4 hidden md:block">
         <button 
           @click="openSearch"
           class="flex items-center relative w-full h-9 px-3 rounded-md border border-input bg-background text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
@@ -57,8 +58,8 @@ onUnmounted(() => {
         </button>
       </div>
 
-      <!-- 右側按鈕 -->
-      <div class="flex items-center space-x-4 flex-shrink-0">
+      <!-- 右側: 按鈕群組 -->
+      <div class="flex items-center gap-2 md:gap-4 flex-shrink-0">
           <a 
             href="https://github.com/agentskills/agentskills" 
             target="_blank"
@@ -75,8 +76,8 @@ onUnmounted(() => {
             @click="toggleMobileMenu"
             class="md:hidden text-muted-foreground hover:text-foreground"
           >
-            <MoreVertical v-if="!isMobileMenuOpen" class="h-6 w-6" />
-            <X v-else class="h-6 w-6" />
+            <MoreVertical v-if="!isMobileMenuOpen" class="h-5 w-5" />
+            <X v-else class="h-5 w-5" />
           </button>
       </div>
     </div>
