@@ -23,8 +23,8 @@ const emit = defineEmits<{
 const tocItems = [
   { id: 'why-agent-skills', title: '為什麼選擇 Agent Skills?', level: 2 },
   { id: 'what-can-enable', title: 'Agent Skills 能實現什麼?', level: 2 },
-  { id: 'adoption', title: '採用情況', level: 2 },
-  { id: 'open-development', title: '開放式開發', level: 2 },
+  { id: 'adoption', title: '使用情況', level: 2 },
+  { id: 'open-development', title: '開源社群', level: 2 },
   { id: 'get-started', title: '開始使用', level: 2 },
 ]
 </script>
@@ -117,7 +117,7 @@ const tocItems = [
 
     <!-- Adoption -->
     <section id="adoption" class="mb-16">
-      <h2 class="text-2xl font-bold mb-6">採用情況</h2>
+      <h2 class="text-2xl font-bold mb-6">使用情況</h2>
       <Card>
         <CardContent class="pt-6">
           <p class="text-muted-foreground leading-relaxed mb-4">
@@ -132,7 +132,7 @@ const tocItems = [
 
     <!-- Open development -->
     <section id="open-development" class="mb-16">
-      <h2 class="text-2xl font-bold mb-6">開放式開發</h2>
+      <h2 class="text-2xl font-bold mb-6">開源社群</h2>
       <Card>
         <CardContent class="pt-6">
           <p class="text-muted-foreground leading-relaxed mb-6">

@@ -25,11 +25,11 @@
   },
   {
     "id": "home-adoption",
-    "title": "採用情況",
+    "title": "使用情況",
     "path": "/home#adoption",
-    "breadcrumb": "概覽 > 採用情況",
-    "description": "Agent Skills 正在被越來越多的開發者和組織採用",
-    "content": "Agent Skills 正在被越來越多的開發者和組織採用,用於建構更強大、更靈活的 AI 代理程式系統。這個開放格式確保了不同平台和工具之間的互通性,讓技能可以在整個生態系統中共享和重複使用。"
+    "breadcrumb": "概覽 > 使用情況",
+    "description": "Agent Skills 正在被越來越多的開發者和組織使用",
+    "content": "Agent Skills 正在被越來越多的開發者和組織使用,用於建構更強大、更靈活的 AI 代理程式系統。這個開放格式確保了不同平台和工具之間的互通性,讓技能可以在整個生態系統中共享和重複使用。"
   },
   {
     "id": "home-get-started",
