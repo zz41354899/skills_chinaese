@@ -2,8 +2,6 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { Search, Clock, Hash, X } from 'lucide-vue-next'
-import Card from './ui/Card.vue'
-import Input from './ui/Input.vue'
 
 interface SearchResult {
   id: string
@@ -138,26 +136,37 @@ onUnmounted(() => {
 
 <template>
   <div 
-    class="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-start justify-center pt-[10vh] px-4"
+    class="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-start justify-center pt-[10vh] px-4"
     @click="emit('close')"
   >
-    <Card class="w-full max-w-3xl shadow-lg" @click.stop>
-      <div class="p-4">
+    <div class="w-full max-w-2xl bg-background rounded-lg shadow-2xl border border-border" @click.stop>
+      <!-- 標題列 -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-border">
+        <h2 class="text-lg font-semibold">搜尋文件</h2>
+        <button
+          @click="emit('close')"
+          class="text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <X class="h-5 w-5" />
+        </button>
+      </div>
+
+      <div class="p-6">
         <!-- 搜尋輸入框 -->
-        <div class="relative mb-4">
-          <Search class="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-          <Input
+        <div class="relative mb-6">
+          <Search class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <input
             v-model="searchQuery"
             type="text"
-            placeholder="Search..."
-            class="pl-10 pr-4 py-6 text-base"
+            placeholder="開始輸入以搜尋..."
+            class="w-full pl-10 pr-4 py-2.5 bg-background border border-input rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
             autofocus
           />
         </div>
 
         <!-- 最近搜尋標題 -->
-        <div v-if="!searchQuery.trim() && recentSearches.length > 0" class="flex items-center justify-between px-3 py-2">
-          <span class="text-sm text-muted-foreground">最近搜尋</span>
+        <div v-if="!searchQuery.trim() && recentSearches.length > 0" class="flex items-center justify-between mb-3">
+          <span class="text-xs font-medium text-muted-foreground uppercase tracking-wide">最近搜尋</span>
           <button
             @click="clearAllRecentSearches"
             class="text-xs text-muted-foreground hover:text-foreground transition-colors"
@@ -167,50 +176,47 @@ onUnmounted(() => {
         </div>
 
         <!-- 搜尋結果或最近搜尋 -->
-        <div v-if="displayItems.length > 0" class="space-y-1 max-h-[500px] overflow-y-auto">
+        <div v-if="displayItems.length > 0" class="space-y-0.5 max-h-[400px] overflow-y-auto -mx-2">
           <div
             v-for="(item, index) in displayItems"
             :key="'result' in item ? item.result.path : item.path"
             @click="'result' in item ? selectItem(item.result, item.query) : selectItem(item, searchQuery)"
-            class="flex items-start gap-3 px-3 py-3 rounded-md cursor-pointer transition-colors group"
+            class="flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer transition-colors group"
             :class="index === selectedIndex ? 'bg-accent' : 'hover:bg-accent/50'"
           >
-            <div class="mt-0.5 text-muted-foreground">
-              <Clock v-if="!searchQuery.trim()" class="h-4 w-4" />
-              <Hash v-else class="h-4 w-4" />
+            <div class="text-muted-foreground flex-shrink-0">
+              <Clock v-if="!searchQuery.trim()" class="h-3.5 w-3.5" />
+              <Hash v-else class="h-3.5 w-3.5" />
             </div>
             <div class="flex-1 min-w-0">
-              <div class="text-sm text-muted-foreground mb-0.5">
-                {{ 'result' in item ? item.result.breadcrumb : item.breadcrumb }}
-              </div>
-              <div class="font-medium mb-1">
+              <div class="text-sm font-medium truncate">
                 {{ 'result' in item ? item.result.title : item.title }}
               </div>
-              <div class="text-sm text-muted-foreground line-clamp-1">
-                {{ 'result' in item ? item.result.description : item.description }}
+              <div class="text-xs text-muted-foreground truncate">
+                {{ 'result' in item ? item.result.breadcrumb : item.breadcrumb }}
               </div>
             </div>
             <!-- 刪除按鈕 (僅在歷史記錄中顯示) -->
             <button
               v-if="!searchQuery.trim()"
               @click="removeRecentSearch(index, $event)"
-              class="mt-0.5 text-muted-foreground hover:text-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+              class="text-muted-foreground hover:text-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"
             >
-              <X class="h-4 w-4" />
+              <X class="h-3.5 w-3.5" />
             </button>
           </div>
         </div>
 
         <!-- 無結果 -->
-        <div v-else-if="searchQuery.trim()" class="px-3 py-8 text-center text-muted-foreground">
+        <div v-else-if="searchQuery.trim()" class="py-12 text-center text-sm text-muted-foreground">
           找不到相關結果
         </div>
 
         <!-- 空狀態 -->
-        <div v-else-if="recentSearches.length === 0" class="px-3 py-8 text-center text-muted-foreground">
+        <div v-else-if="recentSearches.length === 0" class="py-12 text-center text-sm text-muted-foreground">
           開始輸入以搜尋文件
         </div>
       </div>
-    </Card>
+    </div>
   </div>
 </template>
