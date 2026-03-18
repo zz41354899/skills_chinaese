@@ -18,7 +18,7 @@ const emit = defineEmits<{
 const tocItems = [
   { id: 'one-off-commands', title: '一次性命令', level: 2 },
   { id: 'referencing-scripts', title: '引用腳本', level: 2 },
-  { id: 'self-contained-scripts', title: '自包含腳本', level: 2 },
+  { id: 'self-contained-scripts', title: '自訂式腳本', level: 2 },
   { id: 'designing-scripts', title: '設計腳本', level: 2 },
 ]
 </script>
@@ -106,12 +106,12 @@ const tocItems = [
 
     <!-- Self-contained scripts -->
     <section id="self-contained-scripts" class="mb-12">
-      <h2 class="text-2xl font-bold mb-6">自包含腳本</h2>
+      <h2 class="text-2xl font-bold mb-6">自訂式腳本</h2>
       <Card>
         <CardContent class="pt-6">
           <!-- Self-contained scripts -->
           <p class="text-muted-foreground mb-4">
-            使用內聯依賴聲明創建自包含腳本:
+            使用內聯依賴聲明創建自訂式腳本:
           </p>
           <ul class="space-y-2 text-sm text-muted-foreground">
             <li class="flex items-start">
