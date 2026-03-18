@@ -1,0 +1,106 @@
+[
+  {
+    "id": "home",
+    "title": "概覽",
+    "path": "/home",
+    "breadcrumb": "概覽",
+    "description": "一個簡單、開放的格式,為代理程式提供新的能力和專業知識。",
+    "content": "Agent Skills 是一個簡單、開放的格式,為 AI 代理程式提供新的能力和專業知識。"
+  },
+  {
+    "id": "home-why",
+    "title": "為什麼選擇 Agent Skills?",
+    "path": "/home#why-agent-skills",
+    "breadcrumb": "概覽 > 為什麼選擇 Agent Skills?",
+    "description": "Agent Skills 提供了一個標準化的方式來擴展 AI 代理程式的能力。",
+    "content": "Agent Skills 提供了一個標準化的方式來擴展 AI 代理程式的能力。透過簡單的格式定義,您可以輕鬆地為代理程式添加新的技能、知識和工作流程。"
+  },
+  {
+    "id": "home-capabilities",
+    "title": "Agent Skills 能實現什麼?",
+    "path": "/home#what-can-enable",
+    "breadcrumb": "概覽 > Agent Skills 能實現什麼?",
+    "description": "領域專業知識、新功能、可重複的工作流程、互通性",
+    "content": "領域專業知識:將專業知識打包成可重複使用的指令,從法律審查流程到資料分析管道。新功能:為代理程式提供新的能力(例如:建立簡報、建構 MCP 伺服器、分析資料集)。可重複的工作流程:將多步驟任務轉化為一致且可審計的工作流程。互通性:在不同的支援技能的代理程式產品中重複使用相同的技能。"
+  },
+  {
+    "id": "home-adoption",
+    "title": "採用情況",
+    "path": "/home#adoption",
+    "breadcrumb": "概覽 > 採用情況",
+    "description": "Agent Skills 正在被越來越多的開發者和組織採用",
+    "content": "Agent Skills 正在被越來越多的開發者和組織採用,用於建構更強大、更靈活的 AI 代理程式系統。這個開放格式確保了不同平台和工具之間的互通性,讓技能可以在整個生態系統中共享和重複使用。"
+  },
+  {
+    "id": "home-get-started",
+    "title": "開始使用",
+    "path": "/home#get-started",
+    "breadcrumb": "概覽 > 開始使用",
+    "description": "快速開始、最佳實踐、規格說明",
+    "content": "快速開始:創建你的第一個技能。最佳實踐:學習如何編寫高品質的技能。規格說明:查看完整的格式規範。"
+  },
+  {
+    "id": "what-are-skills",
+    "title": "什麼是技能?",
+    "path": "/what-are-skills",
+    "breadcrumb": "什麼是技能?",
+    "description": "Agent Skills 是一個輕量級、開放的格式,用於擴展 AI 代理程式的能力,提供專業知識和工作流程。",
+    "content": "什麼是技能? Agent Skills 是一個輕量級、開放的格式,用於擴展 AI 代理程式的能力。技能是一個包含 SKILL.md 檔案的目錄。SKILL.md 使用 Markdown frontmatter 來描述技能的用途,並在主體中提供指令。技能如何運作? 發現: 代理程式掃描技能目錄並讀取每個技能的 name 和 description。啟動: 當使用者的請求與技能的描述匹配時,代理程式將技能的完整主體載入到上下文中。執行: 代理程式遵循主體中的指令來完成任務。為什麼使用技能? 技能讓你能夠為代理程式提供專業知識和工作流程,而無需修改其核心提示或訓練。它們是輕量級、可移植的,並且可以在支援它們的任何代理程式中使用。"
+  },
+  {
+    "id": "specification",
+    "title": "規格說明",
+    "path": "/specification",
+    "breadcrumb": "規格說明",
+    "description": "Agent Skills 的完整格式規範。",
+    "content": "規格說明 Agent Skills 的完整格式規範。目錄結構 技能是一個包含 SKILL.md 檔案的目錄。SKILL.md 格式 SKILL.md 是一個 Markdown 檔案,包含 YAML frontmatter 和主體內容。Frontmatter 必填欄位: name - 技能的簡短識別符,必須與目錄名稱匹配。description - 告訴代理程式何時使用此技能的描述。選填欄位: version - 技能的版本號。author - 技能的作者。license - 技能的授權。tags - 技能的標籤列表。Body 內容 主體包含代理程式在技能啟動時遵循的指令。可以包含 Markdown 格式、程式碼區塊、列表等。選填目錄 scripts/ - 包含可執行腳本的目錄。examples/ - 包含範例的目錄。tests/ - 包含測試的目錄。"
+  },
+  {
+    "id": "quickstart",
+    "title": "快速開始",
+    "path": "/skill-creation/quickstart",
+    "breadcrumb": "給技能創建者 > 快速開始",
+    "description": "創建你的第一個 Agent Skill 並在 VS Code 中看到它運作。",
+    "content": "快速開始 創建你的第一個 Agent Skill 並在 VS Code 中看到它運作。前置需求 安裝 VS Code 和 GitHub Copilot。創建技能 在專案根目錄的 .agents/skills/ 目錄中創建一個新的技能檔案。添加 frontmatter 包含 name 和 description。添加主體內容,提供代理程式遵循的指令。試用 在 VS Code 中開啟專案,開啟 Copilot Chat 面板,選擇 Agent 模式,輸入 /skills 確認技能出現,詢問相關問題測試技能。運作原理 發現: 代理程式掃描技能目錄並讀取 name 和 description。啟動: 當請求匹配描述時,載入完整的 SKILL.md 主體。執行: 代理程式遵循主體中的指令。"
+  },
+  {
+    "id": "best-practices",
+    "title": "最佳實踐",
+    "path": "/skill-creation/best-practices",
+    "breadcrumb": "給技能創建者 > 最佳實踐",
+    "description": "如何編寫範圍明確且針對任務校準的技能。",
+    "content": "最佳實踐 如何編寫範圍明確且有效的技能。從真實專業知識開始 技能應該基於真實的專業知識和工作流程。明智使用上下文 技能的主體會消耗代理程式的上下文視窗。保持簡潔,只包含必要的資訊。校準控制程度 技能可以提供高層次的指導或詳細的步驟。根據任務的複雜度調整控制程度。有效的指令模式 使用清晰的指令,提供範例,使用程式碼區塊,組織資訊。避免的陷阱 不要過度指定,不要包含無關資訊,不要假設特定的代理程式功能。"
+  },
+  {
+    "id": "optimizing-descriptions",
+    "title": "優化技能描述",
+    "path": "/skill-creation/optimizing-descriptions",
+    "breadcrumb": "給技能創建者 > 優化技能描述",
+    "description": "如何改進你的技能描述,使其在相關提示下可靠地觸發。",
+    "content": "優化技能描述 如何改進你的技能描述,使其在相關提示下可靠地觸發。技能觸發機制 代理程式使用技能的 description 來決定何時啟動它。描述應該清楚地說明技能的用途和適用場景。編寫有效描述 使用清晰的語言,包含關鍵字,描述輸入和輸出,提供使用場景。測試描述 使用不同的提示測試技能是否正確觸發。優化循環 測試、分析、調整、重複。"
+  },
+  {
+    "id": "evaluating-skills",
+    "title": "評估技能輸出品質",
+    "path": "/skill-creation/evaluating-skills",
+    "breadcrumb": "給技能創建者 > 評估技能輸出品質",
+    "description": "如何使用評估驅動的迭代來測試技能是否產生良好的輸出。",
+    "content": "評估技能輸出品質 如何使用評估驅動的迭代來測試技能是否產生良好的輸出。設計測試案例 創建代表性的測試案例,涵蓋不同的使用場景。運行評估 使用測試案例測試技能,記錄結果。評分輸出 評估輸出的正確性、完整性、相關性。迭代改進 根據評估結果調整技能,重複測試。"
+  },
+  {
+    "id": "using-scripts",
+    "title": "在技能中使用腳本",
+    "path": "/skill-creation/using-scripts",
+    "breadcrumb": "給技能創建者 > 在技能中使用腳本",
+    "description": "如何在技能中運行命令和打包可執行腳本。",
+    "content": "在技能中使用腳本 如何在技能中運行命令和打包可執行腳本。一次性命令 在技能主體中直接包含命令。引用腳本 引用 scripts/ 目錄中的腳本檔案。自包含腳本 在技能中嵌入完整的腳本內容。設計腳本 保持腳本簡單,提供清晰的輸出,處理錯誤。"
+  },
+  {
+    "id": "adding-skills-support",
+    "title": "添加技能支援",
+    "path": "/client-implementation/adding-skills-support",
+    "breadcrumb": "給客戶端實作者 > 添加技能支援",
+    "description": "為 AI 代理程式或開發工具添加 Agent Skills 支援的指南。",
+    "content": "添加技能支援 為 AI 代理程式或開發工具添加 Agent Skills 支援的指南。核心原則 技能應該是輕量級、可移植的,並且易於整合。步驟 1: 發現技能 掃描預設的技能目錄,讀取每個 SKILL.md 檔案的 frontmatter。步驟 2: 解析 SKILL.md 解析 YAML frontmatter 和 Markdown 主體。步驟 3: 揭露技能 將技能的 name 和 description 提供給代理程式。步驟 4: 啟動技能 當請求匹配技能描述時,載入完整的主體到上下文中。步驟 5: 執行 讓代理程式遵循主體中的指令。"
+  }
+]
