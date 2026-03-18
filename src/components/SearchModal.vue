@@ -127,13 +127,6 @@ const handleKeydown = (e: KeyboardEvent) => {
   }
 }
 
-// 點擊背景關閉
-const handleBackdropClick = (e: MouseEvent) => {
-  if (e.target === e.currentTarget) {
-    emit('close')
-  }
-}
-
 onMounted(() => {
   document.addEventListener('keydown', handleKeydown)
 })
